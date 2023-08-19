@@ -24,7 +24,7 @@ def minimax(pos, depth, role):
         if v!=' ': continue
 
         # Making a move and creating a variation
-        variant =  pos[:i]+('x' if role else 'o')+pos[(i+1):]
+        variant =  pos[:i]+symbol+pos[(i+1):]
 
         # Recursively calling minimax and getting the evaluation of the variation
         # The reason for the negative sign is because the evaluation returned by minimax is from opponent's POV.
@@ -53,7 +53,7 @@ def bestMove(pos, role):
     bestSquare = 0
     for i,v in enumerate(pos):
         if v!=' ': continue
-        variant =  pos[:i]+('x' if role else 'o')+pos[(i+1):]
+        variant =  pos[:i]+symbol+pos[(i+1):]
         child_node_eval = -minimax(variant, 1, not role)
         if evaluation<child_node_eval or evaluation==3 : 
             evaluation = child_node_eval
