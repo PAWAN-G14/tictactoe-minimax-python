@@ -8,7 +8,10 @@ from functools import lru_cache
 @lru_cache(maxsize=None)
 def minimax(pos, depth, role):
 
-    # End the search tree if someone won or match is drawn
+    # End the search tree if someone won or match is drawn.
+    # Here the value of win/lose is divided by depth. 
+    # This is because shallow wins/loses should be given more weight than deep wins/loses in the search tree.
+    # The weight or the evaluation value becomes closer to zero with increasing depth.
     status = winLoseDraw(pos)
     if status!=2: return (status*(1.0 if role else -1.0))/depth
 
