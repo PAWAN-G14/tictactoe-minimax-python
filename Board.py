@@ -29,14 +29,19 @@ class Board:
     # -> Provides a function for making moves
     # -> Provides a function for drawing the board in the CLI.
 
-    def __init__(self): self.pos = "         "
+    def __init__(self): 
+	    # Setting up an empty board in the form of a string.
+	    self.pos = "         "
 
     def makeMove(self, square, role):
+	# Placing 'x' or 'o' in the said square.
+	# If square invalid then return 1 for error, else return 0 for success.
         if square<0 or square>8 or self.pos[square]!=' ': return 1
         self.pos = self.pos[:square]+('x' if role else 'o')+self.pos[(square+1):]
         return 0
 
     def draw(self):
+	# Draw the board with the current position.
         print('')
         print(f"\t   |   |\n\t {self.pos[0]} | {self.pos[1]} | {self.pos[2]}\n\t   |   |\n",
                "\t===========\n",
