@@ -1,12 +1,16 @@
 from Board import winLoseDraw
 from functools import lru_cache
 
-# Using functools lru_cache to cut down the time for re-evaluating similar positions
+# Using functools lru_cache to cut down the time for re-evaluating identical positions
 # NOTE: lru_cache is completely optional. 
 #       In simple words, memory is used up to reduce time. 
 
 @lru_cache(maxsize=None)
 def minimax(pos, depth, role):
+    
+    # @param pos  (str  ) --> The position to be evaluated.
+    # @param role (bool ) --> The role of the player, i.e X or O. 
+    # @return     (float) --> Evaluation of the position.
 
     # End the search tree if someone won or match is drawn.
     # Here the value of win/lose is divided by depth. 
@@ -23,7 +27,7 @@ def minimax(pos, depth, role):
     # The loop for calculating variations by iterating through each square and making move.
     for i,v in enumerate(pos):
 
-        # To check if a move can be (i.e is current square empty) made and a variaiton can be created.
+        # To check if a move can be made (i.e is current square empty) and a variation can be created.
         if v!=' ': continue
 
         # Making a move and creating a variation
