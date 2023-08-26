@@ -1,3 +1,15 @@
+"""
+--------------------------------------------
+Simple TicTacToe AI using Minimax algorithm.
+--------------------------------------------
+
+ - - - - - - - - - - - - - - - - - - - - 
+ Author: Pawan G.
+ Status: 14 y/o still learning.
+ - - - - - - - - - - - - - - - - - - - - 
+
+"""
+
 from Game import Game
 
 run = 1                       
