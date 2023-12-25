@@ -17,10 +17,10 @@ def winLoseDraw(pos):
                         pos[1]+pos[4]+pos[7],    
                         pos[2]+pos[5]+pos[8]
                     ]   
-    if   "xxx" in rowsColsDiags: return  1;
-    elif "ooo" in rowsColsDiags: return -1;
-    elif  ' ' in pos :           return  2;
-    return 0;
+    if   "xxx" in rowsColsDiags: return  1
+    elif "ooo" in rowsColsDiags: return -1
+    elif  ' ' in pos :           return  2
+    return 0
 
 class Board:
 
