@@ -24,8 +24,8 @@ class Game:
         self.status = 2
         while 1:
             user_input = input("Which would you prefer being, X or O ? : ")
-            if   user_input[0].lower()=='x': self.user = 1
-            elif user_input[0].lower()=='o': self.user = 0
+            if   user_input != "" and user_input[0].lower()=='x': self.user = 1
+            elif user_input != "" and user_input[0].lower()=='o': self.user = 0
             else:
                 print("Sorry, seems to be an invalid input . . . Try Again. \n")
                 continue
@@ -83,11 +83,11 @@ class Game:
 	# Step 2: Get user input in the form of y/n.
 	# Step 3: Check whether input is valid. If invalid, the leave a kind message and return to Step 2.
 	# Step 4: After getting the valid input, return the appropriate boolean value i.e true for yes and false for no.
-	    
-        user_input = input("Would you like to have a rematch? : ")
+	
         while 1:
-            if   user_input[0].lower() == 'y': return 1
-            elif user_input[0].lower() == 'n': return 0
+            user_input = input("Would you like to have a rematch? : ")
+            if   user_input != "" and user_input[0].lower() == 'y': return 1
+            elif user_input != "" and user_input[0].lower() == 'n': return 0
             else: 
                 print("Sorry, seems to be an invalid input . . . Try Again. ")
                 continue
